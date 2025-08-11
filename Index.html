@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>A++ Signal Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📈 A++ Signal Generator</h1>
+    </header>
+
+    <main>
+        <section id="input-section">
+            <h2>Daten-Eingabe</h2>
+            <form id="signalForm">
+                <label>Datum:
+                    <input type="date" id="datum" required>
+                </label>
+                <label>Markt:
+                    <select id="markt" required>
+                        <option value="ES">ES</option>
+                        <option value="MES">MES</option>
+                        <option value="NQ">NQ</option>
+                        <option value="MNQ">MNQ</option>
+                        <option value="BTC">BTC</option>
+                        <option value="DOGE">Dogecoin</option>
+                        <option value="SOL">Solana</option>
+                        <option value="SHIB">Shiba Inu</option>
+                        <option value="XRP">XRP</option>
+                    </select>
+                </label>
+
+                <label>Aktueller Preis:
+                    <input type="number" id="aktuellerPreis" step="0.01" required>
+                </label>
+
+                <label>ATR Daily:
+                    <input type="number" id="atr" step="0.01" required>
+                </label>
+
+                <label>VIX:
+                    <input type="number" id="vix" step="0.01">
+                </label>
+
+                <label>Vortageshoch:
+                    <input type="number" id="vth" step="0.01">
+                </label>
+
+                <label>Vortagestief:
+                    <input type="number" id="vtt" step="0.01">
+                </label>
+
+                <label>VAH:
+                    <input type="number" id="vah" step="0.01">
+                </label>
+
+                <label>VAL:
+                    <input type="number" id="val" step="0.01">
+                </label>
+
+                <label>POC:
+                    <input type="number" id="poc" step="0.01">
+                </label>
+
+                <label>Max Pain:
+                    <input type="number" id="maxPain" step="0.01">
+                </label>
+
+                <label>GEX:
+                    <select id="gex">
+                        <option value="positiv">positiv</option>
+                        <option value="neutral">neutral</option>
+                        <option value="negativ">negativ</option>
+                    </select>
+                </label>
+
+                <label>Gamma Flip:
+                    <input type="number" id="gammaFlip" step="0.01">
+                </label>
+
+                <label>Option Chain PDF hochladen:
+                    <input type="file" id="pdfUpload" accept="application/pdf">
+                </label>
+
+                <button type="submit">Signal generieren</button>
+            </form>
+        </section>
+
+        <section id="output-section">
+            <h2>Signal-Ausgabe</h2>
+            <div id="signalBox"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
